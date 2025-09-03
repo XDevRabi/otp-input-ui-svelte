@@ -31,7 +31,7 @@
     }
 
     // to handle paste
-    if (event.ctrlKey && event.key === "v") {
+    if (event.ctrlKey && event.key.toLowerCase() === "v") {
       event.preventDefault();
       navigator.clipboard.readText().then((text) => {
         const digits = text.replace(/\D/g, "").slice(0, 6); // discard all character which is not digit.
@@ -43,6 +43,35 @@
         inputs[nextIndex].focus();
       });
     }
+
+    // to handle copy feature
+    if (event.ctrlKey && event.key.toLowerCase() === "c") {
+      event.preventDefault();
+      navigator.clipboard.writeText(code.join(""));
+    }
+
+    // to handle cut feature
+    if (event.ctrlKey && event.key.toLowerCase() === "x") {
+      event.preventDefault();
+      navigator.clipboard.writeText(code.join("")).then(() => {
+        code = ["", "", "", "", "", ""];
+        inputs[0].focus();
+      });
+    }
+
+    // shift + (left or right) navigation.
+    if (
+      event.shiftKey &&
+      (event.key === "ArrowLeft" || event.key === "ArrowRight")
+    ) {
+      event.preventDefault();
+      if (event.key === "ArrowLeft" && index > 0) {
+        inputs[index - 1].focus();
+      }
+      if (event.key === "ArrowRight" && index < 5) {
+        inputs[index + 1].focus();
+      }
+    }
   }
 
   // focus the input box which has been clicked.
@@ -52,7 +81,7 @@
 </script>
 
 <div
-  class="flex flex-col items-center justify-center rounded-3xl bg-white p-6 md:p-12"
+  class="flex flex-col items-center justify-center rounded-3xl bg-white p-6 md:p-12 shadow-[0_0_50px_0_#038aff1a]"
 >
   <!-- Icon part -->
   <div class="flex justify-center mb-6 relative">
@@ -136,7 +165,7 @@
             on:click={() => handleClick(index)}
             on:focus={() => (activeIndex = index)}
             on:blur={() => (activeIndex = -1)}
-            class="w-10 h-14 md:w-13 md:h-17 border-2 rounded-lg focus:outline-none focus:ring-1 focus:border-transparent text-transparent
+            class="w-10 h-14 md:w-13 md:h-17 border-2 rounded-lg focus:outline-none focus:ring-1 focus:border-transparent text-transparent select-none
                 {digit
               ? isCodeComplete && !isVerified
                 ? 'border-error text-error bg-error/5 focus:ring-error'
@@ -160,15 +189,18 @@
 
     <!-- submit button -->
     <button
-      class="text-center w-full rounded-xl h-16 font-semibold text-lg relative flex justify-center items-center cursor-pointer overflow-clip
+      class="text-center w-full rounded-xl h-16 font-medium text-lg relative flex justify-center items-center cursor-pointer overflow-clip
       {isCodeComplete && !isVerified ? 'bg-error' : 'bg-neutral-1'}
       "
     >
-      <div
+    <!-- button overlay -->
+      <span
         class="absolute transition-all duration-300 ease-in-out top-1/2 -translate-y-1/2 bg-primary-blue w-full h-16 rounded-xl {isVerified
           ? '-right-1/2 -translate-x-1/2'
           : '-right-full -translate-x-0'}"
-      ></div>
+      ></span>
+
+      <!-- button label -->
       <span class="relative {isCodeComplete ? 'text-white' : 'text-neutral-2'}">
         {isVerified
           ? "Let's go!"

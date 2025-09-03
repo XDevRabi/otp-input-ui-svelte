@@ -88,11 +88,11 @@
   <div class="flex justify-center gap-1.5 md:gap-3 my-8">
     {#each $code as digit, index}
       <div
-        class="relative custom-cursor p-0.5 overflow-clip
+        class="relative custom-cursor
             {index === 2 ? 'mr-3 md:mr-5' : ''}
             {activeIndex === index && !digit
           ? 'after:bottom-4'
-          : 'after:-bottom-2 after:opacity-0'}
+          : 'after:-bottom-0 after:opacity-0'}
           "
       >
         <input
@@ -107,12 +107,12 @@
           on:click={() => handleClick(index)}
           on:focus={() => (activeIndex = index)}
           on:blur={() => (activeIndex = -1)}
-          class="w-10 h-14 md:w-13 md:h-17 border-2 rounded-lg focus:outline-none focus:ring-1 focus:border-transparent text-transparent select-none
+          class="w-10 h-14 md:w-13 md:h-17 border-2 rounded-lg focus:outline-none text-transparent select-none
                 {digit
             ? $isCodeComplete && !$isVerified
-              ? 'border-error text-error bg-error/5 focus:ring-error'
-              : 'border-primary-blue text-primary-blue focus:ring-primary-blue'
-            : 'border-neutral-1 focus:ring-primary-blue'}"
+              ? 'border-error focus:border-error text-error bg-error/5'
+              : 'border-primary-blue focus:border-primary-blue text-primary-blue'
+            : 'border-neutral-1 focus:border-primary-blue'}"
         />
 
         <!-- to display input field value with animation -->

@@ -2,19 +2,19 @@
   import OtpForm from "./lib/otp-form.svelte";
 </script>
 
-<main class="w-full h-screen flex flex-col justify-center items-center">
+<main class="w-full h-screen flex flex-col justify-center items-center p-4 overflow-hidden">
   <OtpForm />
 
-  <div class="flex gap-2 items-center mt-6 text-gray-500">
-    <p class="text-center leading-0">
-      (Please enter 628593 as test OTP) or copy from here.
-    </p>
+  <div class="flex max-md:flex-col gap-2.5 items-center mt-6 text-gray-500">
+    <p class="text-center leading-0">(Please enter 628593 as test OTP)</p>
     <button
+      class="flex gap-1 items-center"
       aria-label="Copy OTP"
       on:click={() => {
         navigator.clipboard.writeText("628593");
       }}
     >
+      or copy from here.
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"

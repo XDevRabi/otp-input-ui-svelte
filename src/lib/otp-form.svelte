@@ -59,7 +59,7 @@
 
   <h1 class="text-4xl font-semibold text-center mb-4">Easy peasy</h1>
 
-  <p class="text-neutral-2 text-center mb-2 text-sm">
+  <p class="text-neutral-2 text-center mb-2 text-[13px]">
     Enter 6-digit code from your two factor authenticator APP
   </p>
 

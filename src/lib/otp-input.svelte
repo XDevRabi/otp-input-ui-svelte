@@ -117,7 +117,7 @@
 
         <!-- to display input field value with animation -->
         <span
-          class="absolute left-1/2 -translate-x-1/2 text-center text-3xl font-normal pointer-events-none transition-all duration-300 ease-in-out
+          class="absolute left-1/2 -translate-x-1/2 text-center text-4xl font-extralight pointer-events-none transition-all duration-300 ease-in-out font-outfit
                   {digit ? 'top-1/2 -translate-y-1/2' : '-top-0'}
                   {$isCodeComplete && !$isVerified
             ? 'text-error'

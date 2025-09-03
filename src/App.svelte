@@ -5,7 +5,7 @@
 <main class="w-full h-screen flex flex-col justify-center items-center p-4 overflow-hidden">
   <OtpForm />
 
-  <div class="flex max-md:flex-col gap-2.5 items-center mt-6 text-gray-500">
+  <div class="flex max-md:flex-col gap-2.5 items-center mt-4 text-gray-500 text-sm">
     <p class="text-center leading-0">(Please enter 628593 as test OTP)</p>
     <button
       class="flex gap-1 items-center"
@@ -17,8 +17,8 @@
       or copy from here.
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

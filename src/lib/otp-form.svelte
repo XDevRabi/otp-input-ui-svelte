@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="flex flex-col items-center justify-center rounded-3xl bg-white p-6 md:p-12 shadow-[0_0_50px_0_#038aff1a]"
+  class="flex flex-col items-center justify-center rounded-3xl bg-white p-5 md:p-10 shadow-[0_0_50px_0_#038aff1a]"
 >
   <!-- Icon part -->
   <div class="flex justify-center mb-6 relative">
@@ -20,7 +20,7 @@
     ></span>
 
     <div
-      class="size-24 rounded-full flex items-center justify-center relative
+      class="size-22 rounded-full flex items-center justify-center relative
       {!$isCodeComplete
         ? 'bg-[#e5f3ff]'
         : $isVerified
@@ -37,8 +37,8 @@
             ? 'text-success'
             : 'text-error bounce-animation'}
         "
-        width="50"
-        height="48"
+        width="41"
+        height="40"
         viewBox="0 0 24 25"
         fill="none"
         stroke="currentColor"

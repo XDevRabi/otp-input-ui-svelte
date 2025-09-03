@@ -107,7 +107,7 @@
           on:click={() => handleClick(index)}
           on:focus={() => (activeIndex = index)}
           on:blur={() => (activeIndex = -1)}
-          class="w-10 h-14 md:w-13 md:h-17 border-2 rounded-lg focus:outline-none text-transparent select-none
+          class="w-8 h-12 md:w-12 md:h-16 border-2 rounded-lg focus:outline-none text-transparent select-none
                 {digit
             ? $isCodeComplete && !$isVerified
               ? 'border-error focus:border-error text-error bg-error/5'
@@ -117,7 +117,7 @@
 
         <!-- to display input field value with animation -->
         <span
-          class="absolute left-1/2 -translate-x-1/2 text-center text-4xl font-extralight pointer-events-none transition-all duration-300 ease-in-out font-outfit
+          class="absolute left-1/2 -translate-x-1/2 text-center text-3xl md:text-4xl font-extralight pointer-events-none transition-all duration-300 ease-in-out font-outfit
                   {digit ? 'top-1/2 -translate-y-1/2' : '-top-0'}
                   {$isCodeComplete && !$isVerified
             ? 'text-error'
@@ -131,7 +131,7 @@
 
   <!-- submit button -->
   <button
-    class="text-center w-full rounded-xl h-16 font-medium text-lg relative flex justify-center items-center cursor-pointer overflow-clip
+    class="text-center w-full rounded-xl h-14 font-medium text-md relative flex justify-center items-center cursor-pointer overflow-clip
       {$isCodeComplete && !$isVerified ? 'bg-error' : 'bg-neutral-1'}
       "
   >
@@ -160,7 +160,8 @@
     left: 50%;
     transform: translateX(-50%);
     width: 24px;
-    height: 1.2px;
+    height: 1.5px;
+    border-radius: 2px;
     transition: all 0.3s ease-in-out;
     background-color: var(--color-primary-blue);
   }

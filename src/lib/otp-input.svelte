@@ -109,8 +109,8 @@
                 {digit
             ? $isCodeComplete && !$isVerified
               ? 'border-error focus:border-error text-error bg-error/5'
-              : 'border-primary-blue focus:border-primary-blue text-primary-blue'
-            : 'border-neutral-1 focus:border-primary-blue'}"
+              : 'border-primary-blue focus:border-primary-blue text-primary-blue focus:bg-primary-blue/5'
+            : 'border-neutral-1 focus:border-primary-blue focus:bg-primary-blue/5'}"
         />
 
         <!-- to display input field value with animation -->

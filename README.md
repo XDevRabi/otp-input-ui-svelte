@@ -100,7 +100,7 @@ export const isVerified = derived(code, $code => $code.join("") === "628593");
 The OTP input supports the following keyboard interactions:
 
 - **Tab**: Navigate between input fields
-- **Shift + Left/Right Arrow**: Navigate between input fields
+- **Left/Right Arrow**: Navigate between input fields
 - **Backspace**: Delete current digit and move to previous field if empty
 - **Ctrl + V**: Paste a code from clipboard (automatically distributes digits)
 - **Ctrl + C**: Copy the current code to clipboard

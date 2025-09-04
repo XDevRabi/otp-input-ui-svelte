@@ -61,10 +61,8 @@
       });
     }
 
-    // shift + (left or right) navigation.
-    if (
-      event.shiftKey &&
-      (event.key === "ArrowLeft" || event.key === "ArrowRight")
+    // left or right navigation.
+    if ((event.key === "ArrowLeft" || event.key === "ArrowRight")
     ) {
       event.preventDefault();
       if (event.key === "ArrowLeft" && index > 0) {

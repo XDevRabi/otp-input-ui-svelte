@@ -89,7 +89,7 @@
         class="relative custom-cursor
             {index === 2 ? 'mr-3 md:mr-5' : ''}
             {activeIndex === index && !digit
-          ? 'after:bottom-4'
+          ? 'after:md:bottom-3.5 after:bottom-2.5 after:max-md:w-4 after:w-6'
           : 'after:-bottom-0 after:opacity-0'}
           "
       >
@@ -115,7 +115,7 @@
 
         <!-- to display input field value with animation -->
         <span
-          class="absolute left-1/2 -translate-x-1/2 text-center text-3xl md:text-4xl font-extralight pointer-events-none transition-all duration-300 ease-in-out font-outfit
+          class="absolute left-1/2 -translate-x-1/2 text-center text-2xl md:text-4xl font-extralight pointer-events-none transition-all duration-300 ease-in-out font-outfit
                   {digit ? 'top-1/2 -translate-y-1/2' : '-top-0'}
                   {$isCodeComplete && !$isVerified
             ? 'text-error'
@@ -157,7 +157,6 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 24px;
     height: 1.5px;
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
